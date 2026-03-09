@@ -2,11 +2,6 @@ import CardWrapper, { Card } from "@/app/ui/dashboard/cards";
 import RevenueChart from "@/app/ui/dashboard/revenue-chart";
 import LatestInvoices from "@/app/ui/dashboard/latest-invoices";
 import { lusitana } from "@/app/ui/fonts";
-import {
-  fetchCardData,
-  fetchLatestInvoices,
-  // fetchRevenue,
-} from "@/app/lib/data";
 import { Suspense } from "react";
 import {
   CardsSkeleton,
@@ -18,12 +13,7 @@ export default async function Page() {
   //removed this from here, and instead the RevenueChart will fetch the necessary data itself, so we can use Streaming (Suspense and use the corresponding skeleton)
   // const revenue = await fetchRevenue();
   //did the same for latest invoices
-  const {
-    numberOfCustomers,
-    numberOfInvoices,
-    totalPaidInvoices,
-    totalPendingInvoices,
-  } = await fetchCardData();
+  //did the same with card contents
 
   return (
     <main>
