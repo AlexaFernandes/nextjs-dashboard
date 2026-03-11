@@ -13,7 +13,6 @@ export default async function Page(props: {
     page?: string;
   }>;
 }) {
-  console.log("rerunning incoices page");
   const searchParams = await props.searchParams;
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
