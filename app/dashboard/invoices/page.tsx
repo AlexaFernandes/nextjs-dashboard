@@ -6,6 +6,12 @@ import { lusitana } from "@/app/ui/fonts";
 import { InvoicesTableSkeleton } from "@/app/ui/skeletons";
 import { Suspense } from "react";
 import { fetchInvoicesPages } from "@/app/lib/data";
+import { Metadata } from "next";
+
+// this will replace the %s on the title metadata defined on layout.tsx of the app (where the RootLayout is)
+export const metadata: Metadata = {
+  title: "Invoices",
+};
 
 export default async function Page(props: {
   searchParams?: Promise<{
